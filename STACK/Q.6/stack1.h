@@ -29,5 +29,7 @@ stutes_t copy2(stack_t *mystack,stack_t *copiedstack,stutes_t *stutes);
 void displayStackElement(stack_t *mystack,stutes_t *stutes);
 stutes_t destroystack(stack_t *mystack);
 
+int validation(char*str,int size,stack_t *Stack1);
+
 #endif
 

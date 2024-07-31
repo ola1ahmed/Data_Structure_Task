@@ -288,3 +288,44 @@ stutes_t destroystack(stack_t *mystack)
 	}
 	return stutes;
 }
+
+int validation(char*str,int size,stack_t *Stack1)
+{
+	
+	stutes_t stutes = S_NOK;
+	void *poped_item;
+	for (int i = 0; i < size; i++) 
+	{
+		if( (str[i]=='[' )||(str[i]=='{' )||(str[i]=='(' ) )
+		{
+			stutes=push(Stack1,&str[i]);
+			if(stutes==1)printf("%c pushed seccfelly\n",str[i]);						
+		}
+		else if((str[i]==']' )||(str[i]=='}' )||(str[i]==')' ))
+		{
+			poped_item=pop(Stack1, &stutes);	
+			if(stutes==1) printf("%c poped seccfelly\n",*(char*)poped_item);
+		}
+		else
+		{
+			continue;
+		}
+
+	}
+	
+	int counter=StackCount(Stack1,&stutes);
+	if(counter==0) 
+	{
+		return 1;
+		
+	}
+	else 
+	{
+		return 0;
+		//printf("not valid \n");
+	}
+	
+	
+	
+	
+}

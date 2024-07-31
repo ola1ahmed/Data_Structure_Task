@@ -7,7 +7,6 @@ int main()
 	int size;
     stack_t *Stack1 = NULL;
     stutes_t stutes = S_NOK;
-	void *poped_item;
 	
 	char str[30];
     printf("Enter string: ");
@@ -27,37 +26,18 @@ int main()
         printf("Error: Stack creation failed.\n");
         return -1;
     }
-
-	for (int i = 0; i < size; i++) 
-	{
-		if( (str[i]=='[' )||(str[i]=='{' )||(str[i]=='(' ) )
-		{
-			stutes=push(Stack1,&str[i]);
-			if(stutes==1)printf("%c pushed seccfelly\n",str[i]);						
-		}
-		else if((str[i]==']' )||(str[i]=='}' )||(str[i]==')' ))
-		{
-			poped_item=pop(Stack1, &stutes);	
-			if(stutes==1) printf("%c poped seccfelly\n",*(char*)poped_item);
-		}
-		else
-		{
-			continue;
-		}
-
-	}
 	
-	int counter=StackCount(Stack1,&stutes);
-	if(counter==0) 
+	int ret=validation(str,size,Stack1);
+	
+	if(ret==1) 
 	{
 		printf("valid\n");
 	}
-	else 
+	else
 	{
-		printf("not valid \n");
+		
+		printf("not valid\n");
 	}
-	
-	
 	/*destroy stack*/
 	stutes=destroystack(Stack1);
 	if(stutes==1) 
